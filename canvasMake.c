@@ -40,7 +40,28 @@ char genRandomChar(double chanceOfCharacter, char listOfCharacters[], int listOf
     return spaceOrChar; // returns the space or the character
 }
 
+
+// function to malloc out space for the array given user's command line input
+char **createCanvas(int argc, char **argv){ // takes user's command line inputs as a parameter
+    if (argc != 3){ // checks to see if the user passes 2 arguments
+        printf("You need to pass two arguments");
+        return NULL;
+    } 
+
+    int argumentNumOne = atoi(argv[1]); // height of the canvas
+    int argumentNumTwo = atoi(argv[2]); // width of canvas
+
+    char **canvas = malloc(sizeof(char *) * argumentNumOne); // mallocs the size of a character pointer
+    for (int i = 0; i < argumentNumOne; i++){ // mallocs a char for each space in the other malloc
+        canvas[i] = malloc(sizeof(char) * argumentNumTwo);
+    }
+
+    return canvas; // returns the canvas
+}
+
+
 int main(){
     genRandomChar(chanceOfCharacter, listOfCharacters, listOfCharLength);
+    
     return 0;
 }
