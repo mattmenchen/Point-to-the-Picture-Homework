@@ -68,6 +68,17 @@ char **createCanvas(int argc, char **argv){ // takes user's command line inputs 
 }
 
 
+// function to print each character of the canvas using a double for loop
+void printCanvas(char **canvas, int width, int height){
+    for (int i = 0; i < width; i++){
+        for (int x = 0; x < height; x++){
+            printf("%c", canvas[i][x]);
+        }
+        printf("\n");
+    }
+}
+
+
 int main(){
     genRandomChar(chanceOfCharacter, listOfCharacters, listOfCharLength);
     
