@@ -79,6 +79,16 @@ void printCanvas(char **canvas, int width, int height){
 }
 
 
+// function to free the canvas
+void freeCanvas(char **canvas, int width, int height){
+    for (int x = 0; x < width; x++){
+        free(canvas[x]); // frees the rows first
+    }
+    free(canvas); // frees the column second
+}
+
+
+
 int main(){
     genRandomChar(chanceOfCharacter, listOfCharacters, listOfCharLength);
     
