@@ -56,6 +56,14 @@ char **createCanvas(int argc, char **argv){ // takes user's command line inputs 
         canvas[i] = malloc(sizeof(char) * argumentNumTwo);
     }
 
+    // loops to fill the canvas
+    for (int i = 0; i < argumentNumOne; i++){ // iterates through the outside array
+        for (int x = 0; x < argumentNumTwo; x++){ // iterates through each array inside of the other array
+            // looks at the spot x of the array in the spot i of the array and calls genRandomChar to fill it
+            canvas[i][x] = genRandomChar(chanceOfCharacter, listOfCharacters, listOfCharLength);
+        }
+    }
+
     return canvas; // returns the canvas
 }
 
