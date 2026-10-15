@@ -9,12 +9,10 @@ int listOfCharLength = 10;
 // the chance that a character will be returned instead of a space
 double chanceOfCharacter = 0.2;
 
-
-// returns random character from a list of characters
+// returns random character from a list of characters, takes the list of random characters to choose from, and the length of that list
+// returns a character that it picks
 char pickChar(char listOfCharacters[], int listOfCharLength){
     char chosenChar; // creates the variable for the random character
-
-    srand(time(NULL)); // chooses the seed for the random number
 
     int randomNum = rand() % listOfCharLength; // chooses a random number between 0 and 9 (length of the list)
 
@@ -24,8 +22,8 @@ char pickChar(char listOfCharacters[], int listOfCharLength){
 
 }
 
-
-// function to decide if a character or a space is returned
+// function to decide if a character or a space is returned, takes the chance a character is added to the 2d canvas,
+// takes the list of the random characters, and takes the length of that list. returns a character to fill a part of the canvas
 char genRandomChar(double chanceOfCharacter, char listOfCharacters[], int listOfCharLength){
     char spaceOrChar; // creates the variable that is either the random character or the space
 
@@ -40,8 +38,8 @@ char genRandomChar(double chanceOfCharacter, char listOfCharacters[], int listOf
     return spaceOrChar; // returns the space or the character
 }
 
-
-// function to malloc out space for the array given user's command line input
+// function to malloc out space for the array given user's command line input, takes the users argument count and the arguments
+// returns the 2d canvas to be used for printCanvas
 char **createCanvas(int argc, char **argv){ // takes user's command line inputs as a parameter
     if (argc != 3){ // checks to see if the user passes 2 arguments
         printf("You need to pass two arguments");
@@ -67,30 +65,24 @@ char **createCanvas(int argc, char **argv){ // takes user's command line inputs 
     return canvas; // returns the canvas
 }
 
-
-// function to print each character of the canvas using a double for loop
-void printCanvas(char **canvas, int width, int height){
-    for (int i = 0; i < width; i++){
-        for (int x = 0; x < height; x++){
+// function to print each character of the canvas using a double for loop, takes the 2d canvas, takes the heigh and width
+// doesn't return anything because the function prints
+void printCanvas(char **canvas, int height, int width){
+    for (int i = 0; i < height; i++){
+        for (int x = 0; x < width; x++){
             printf("%c", canvas[i][x]);
         }
         printf("\n");
     }
 }
 
-
-// function to free the canvas
-void freeCanvas(char **canvas, int width, int height){
-    for (int x = 0; x < width; x++){
-        free(canvas[x]); // frees the rows first
+// function to free the canvas, takes the 2d array canvas and the height, doesn't return anything
+void freeCanvas(char **canvas, int height){
+    for (int x = 0; x < height; x++){
+        free(canvas[x]); 
     }
-    free(canvas); // frees the column second
+    free(canvas); 
 }
 
 
 
-int main(){
-    genRandomChar(chanceOfCharacter, listOfCharacters, listOfCharLength);
-    
-    return 0;
-}
