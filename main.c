@@ -1,6 +1,8 @@
 // main program to call the canvas make function, 
 // print canvas function and the free canvas function
-# include <time.h>
+#include "canvasMake.h"
+#include <stdlib.h>
+#include <time.h>
 // imports time for the srand(time(NULL)); so it isn't called many times
 // while another function is using it.
 
