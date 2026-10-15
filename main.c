@@ -7,6 +7,7 @@
 // print canvas function and the free canvas function
 #include "canvasMake.h"
 #include <stdlib.h>
+#include <stdio.h>
 #include <time.h>
 // imports time for the srand(time(NULL)); so it isn't called many times
 // while another function is using it.
@@ -16,7 +17,7 @@ int main(int argc, char **argv){
 
     if (argc != 3){ // checks to see if the user passes 2 arguments
         printf("You need to pass two arguments");
-        return NULL;
+        return 1;
     } 
 
     int height = atoi(argv[1]);
