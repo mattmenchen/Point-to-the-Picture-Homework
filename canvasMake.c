@@ -3,15 +3,15 @@
 #include <stdlib.h>
 
 // list of characters to choose from in pickChar function
-char listOfCharacters[] = {'*', '#', '^', '0', '$', 'K', '@', '!', '%', ';'};
+static char listOfCharacters[] = {'*', '#', '^', '0', '$', 'K', '@', '!', '%', ';'};
 // length of the character list
-int listOfCharLength = 10;
+static int listOfCharLength = 10;
 // the chance that a character will be returned instead of a space
-double chanceOfCharacter = 0.2;
+static double chanceOfCharacter = 0.2;
 
 // returns random character from a list of characters, takes the list of random characters to choose from, and the length of that list
 // returns a character that it picks
-char pickChar(char listOfCharacters[], int listOfCharLength){
+static char pickChar(char listOfCharacters[], int listOfCharLength){
     char chosenChar; // creates the variable for the random character
 
     int randomNum = rand() % listOfCharLength; // chooses a random number between 0 and 9 (length of the list)
@@ -24,7 +24,7 @@ char pickChar(char listOfCharacters[], int listOfCharLength){
 
 // function to decide if a character or a space is returned, takes the chance a character is added to the 2d canvas,
 // takes the list of the random characters, and takes the length of that list. returns a character to fill a part of the canvas
-char genRandomChar(double chanceOfCharacter, char listOfCharacters[], int listOfCharLength){
+static char genRandomChar(double chanceOfCharacter, char listOfCharacters[], int listOfCharLength){
     char spaceOrChar; // creates the variable that is either the random character or the space
 
     int chance = rand() % 10; // creates a variable called chance which is a random number between 0 and 9
