@@ -16,7 +16,7 @@ int main(int argc, char **argv){
     srand(time(NULL)); // chooses the seed for the random number
 
     if (argc != 3){ // checks to see if the user passes 2 arguments
-        printf("You need to pass two arguments");
+        printf("You need to pass two arguments\n");
         return 1;
     } 
 
