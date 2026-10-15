@@ -1,3 +1,7 @@
+// Matt Menchen
+// this file declares the functions called in main.c and makes sure they aren't defined already
+
+
 #ifndef CANVASMAKE_H
 #define CANVASMAKE_H
 

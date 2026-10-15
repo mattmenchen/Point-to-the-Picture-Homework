@@ -1,3 +1,8 @@
+// Matt Menchen
+// this file has the functions to select a random character and decide to fill an array of a user inputs size with either
+// that character or a space, and print it, and free the memory
+
+
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>

@@ -1,3 +1,8 @@
+// Matt Menchen
+// this program calls the functions that make the 2d array, that then print the filled array, then frees the array
+// also has checks to make sure the user inputs the correct amount of arguments and the canvas has the memory allocated
+
+
 // main program to call the canvas make function, 
 // print canvas function and the free canvas function
 #include "canvasMake.h"
