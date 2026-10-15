@@ -42,10 +42,6 @@ static char genRandomChar(double chanceOfCharacter, char listOfCharacters[], int
 // function to malloc out space for the array given user's command line input, takes the users argument count and the arguments
 // returns the 2d canvas to be used for printCanvas
 char **createCanvas(int argc, char **argv){ // takes user's command line inputs as a parameter
-    if (argc != 3){ // checks to see if the user passes 2 arguments
-        printf("You need to pass two arguments");
-        return NULL;
-    } 
 
     int argumentNumOne = atoi(argv[1]); // height of the canvas
     int argumentNumTwo = atoi(argv[2]); // width of canvas
